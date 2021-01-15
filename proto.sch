@@ -1909,30 +1909,6 @@ F 3 "" H 10375 2975 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7350 3700 7450 3700
-$Comp
-L Device:D_Small D62
-U 1 1 6022FD4C
-P 7350 3800
-F 0 "D62" H 7350 3900 50  0000 R CNN
-F 1 "S0D-123" H 7750 3900 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-123" V 7350 3800 50  0001 C CNN
-F 3 "~" V 7350 3800 50  0001 C CNN
-	1    7350 3800
-	0    -1   -1   0   
-$EndComp
-$Comp
-L MX_Alps_Hybrid:MX-NoLED MX62
-U 1 1 6022FD56
-P 7500 3550
-F 0 "MX62" H 7533 3773 60  0000 C CNN
-F 1 "MX-NoLED" H 7533 3699 20  0000 C CNN
-F 2 "MX_Alps_Hybrid:MX-1U" H 6875 3525 60  0001 C CNN
-F 3 "" H 6875 3525 60  0001 C CNN
-	1    7500 3550
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
 	8350 3700 8450 3700
 $Comp
 L Device:D_Small D64
@@ -2004,8 +1980,6 @@ Wire Wire Line
 	4650 2400 4650 1850
 Wire Wire Line
 	4650 2950 4650 2400
-Wire Wire Line
-	7650 3500 7650 2950
 Connection ~ 5150 1300
 Wire Wire Line
 	5150 1300 5150 950 
@@ -2371,7 +2345,7 @@ F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7766-8-bit-AVR-ATmega
 $EndComp
 Text GLabel 3650 3350 0    50   Input ~ 0
 ROW3
-Text GLabel 3650 3900 0    50   Input ~ 0
+Text GLabel 4100 3900 0    50   Input ~ 0
 ROW4
 Text GLabel 4150 950  1    50   Input ~ 0
 COL0
@@ -2403,8 +2377,6 @@ Text GLabel 10650 950  1    50   Input ~ 0
 COL13
 Text GLabel 11150 950  1    50   Input ~ 0
 COL14
-Wire Wire Line
-	7350 3900 7850 3900
 Connection ~ 7850 3900
 Wire Wire Line
 	9150 2950 9150 3500
@@ -2427,12 +2399,6 @@ Connection ~ 7650 2950
 Connection ~ 8150 2950
 Connection ~ 8650 2950
 Connection ~ 9150 2950
-Wire Wire Line
-	7350 3900 6850 3900
-Connection ~ 7350 3900
-Connection ~ 6850 3900
-Wire Wire Line
-	6850 3900 3650 3900
 Text GLabel 3350 4900 2    50   Input ~ 0
 COL0
 Text GLabel 3350 4800 2    50   Input ~ 0
@@ -2463,4 +2429,87 @@ Text GLabel 3350 5700 2    50   Input ~ 0
 COL13
 Text GLabel 3350 5600 2    50   Input ~ 0
 COL14
+$Comp
+L Device:Rotary_Encoder_Switch SW2
+U 1 1 60244A0D
+P 7550 4400
+F 0 "SW2" H 7550 4767 50  0000 C CNN
+F 1 "Rotary_Encoder_Switch" H 7550 4676 50  0000 C CNN
+F 2 "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm" H 7400 4560 50  0001 C CNN
+F 3 "~" H 7550 4660 50  0001 C CNN
+	1    7550 4400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6850 3900 7450 3900
+Wire Wire Line
+	7650 2950 7650 4100
+Wire Wire Line
+	7450 4100 7450 3900
+Connection ~ 7450 3900
+Wire Wire Line
+	7450 3900 7850 3900
+$Comp
+L Device:C_Small C8
+U 1 1 6029C12C
+P 7450 5100
+F 0 "C8" V 7221 5100 50  0000 C CNN
+F 1 "100nF" V 7312 5100 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 7450 5100 50  0001 C CNN
+F 3 "~" H 7450 5100 50  0001 C CNN
+	1    7450 5100
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C_Small C9
+U 1 1 6029EB8D
+P 7650 5100
+F 0 "C9" V 7421 5100 50  0000 C CNN
+F 1 "100nF" V 7512 5100 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric" H 7650 5100 50  0001 C CNN
+F 3 "~" H 7650 5100 50  0001 C CNN
+	1    7650 5100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7550 4700 7550 5100
+Connection ~ 7550 5100
+$Comp
+L power:GND #PWR0114
+U 1 1 602B0D66
+P 7550 5300
+F 0 "#PWR0114" H 7550 5050 50  0001 C CNN
+F 1 "GND" H 7555 5127 50  0000 C CNN
+F 2 "" H 7550 5300 50  0001 C CNN
+F 3 "" H 7550 5300 50  0001 C CNN
+	1    7550 5300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7550 5100 7550 5300
+Wire Wire Line
+	7450 4700 7350 4700
+Wire Wire Line
+	7350 4700 7350 5100
+Wire Wire Line
+	7650 4700 7750 4700
+Wire Wire Line
+	7750 4700 7750 5100
+Wire Wire Line
+	7350 5100 7350 5550
+Connection ~ 7350 5100
+Wire Wire Line
+	7750 5100 7750 5550
+Connection ~ 7750 5100
+Text GLabel 7350 5550 3    50   Input ~ 0
+ROT0
+Text GLabel 7750 5550 3    50   Input ~ 0
+ROT1
+Text GLabel 3350 3900 2    50   Input ~ 0
+ROT0
+Wire Wire Line
+	4100 3900 6850 3900
+Connection ~ 6850 3900
+Text GLabel 3350 3500 2    50   Input ~ 0
+ROT1
 $EndSCHEMATC
